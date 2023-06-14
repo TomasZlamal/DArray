@@ -120,7 +120,8 @@ public:
   //
 
   std::optional<T> getAt(size_t index) const {
-    return (index >= 0 && index < m_length) ? m_data[index] : {};
+    if (index >= 0 && index < m_length) return m_data[index]; 
+    return {};
   }
 
   //
